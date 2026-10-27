@@ -7,7 +7,31 @@
 //  🌟 EXERCICE 1 : List of people
 // ============================================================
 const people = ["Greg", "Mary", "Devon", "James"];
+people[3]="Jason";
+people.shift("Greg");
 
+
+people.push("Nathan");
+console.log(people)
+let maryPos = console.log(people.indexOf("Mary"))
+let copy = people.slice(1,3)
+console.log(copy)
+people.indexOf("Foo")
+console.log(people.indexOf("Foo")) //Foo est utilisé pour vérifier si une entité existe, quand ca n'existe pas javascript renvoie "-1"
+let last = people[people.length-1];
+console.log(last)
+
+for (let i = 0; i < people.length; i++) {
+  console.log(people[i]);
+}
+
+// Boucle 2 : s'arrêter après Devon
+for (let i = 0; i < people.length; i++) {
+  console.log(people[i]);
+  if (people[i] === "Devon") {
+      break;
+  }
+}
 // --- Part I : Review about arrays ---
 // 1. Retirer "Greg" du tableau people
 // ...
@@ -44,6 +68,11 @@ const people = ["Greg", "Mary", "Devon", "James"];
 // ============================================================
 //  🌟 EXERCICE 2 : Your favorite colors
 // ============================================================
+let colors = ["Bleu","Orange","Rouge","Vert","Noir"]
+for(let i=0;i < colors.length;i++){
+  let colorRank = [i+1]
+  console.log(`My #${colorRank} choice is ${colors[i]}`);
+}
 // 1. Créer un tableau `colors` avec TES 5 couleurs préférées
 // ...
 
@@ -58,6 +87,15 @@ const people = ["Greg", "Mary", "Devon", "James"];
 // ============================================================
 //  🌟 EXERCICE 3 : Repeat the question
 // ============================================================
+// Exercice 3 : à tester dans le navigateur (index.html), prompt n'existe pas dans Node.
+let answer;
+
+do {
+    answer = Number(prompt("Give me a number"));
+    console.log(typeof answer);
+} while (answer < 10);
+
+console.log("Merci, ton nombre est " + answer);
 // 1. Demander un nombre à l'utilisateur (prompt) — vérifier le type (typeof)
 // ...
 
@@ -85,29 +123,44 @@ const building = {
 };
 
 // 1. console.log du nombre d'étages
+console.log(building.numberOfFloors)
 // ...
 
 // 2. console.log du nombre d'appartements aux étages 1 et 3
-// ...
+// 
+console.log(building.numberOfAptByFloor.firstFloor)
+console.log(building.numberOfAptByFloor.thirdFloor)
+console.log(building.numberOfAptByFloor.firstFloor + building.numberOfAptByFloor.thirdFloor) // 12
 
 // 3. console.log du nom du 2e locataire + son nombre de pièces
 // ...
-
+console.log(building.nameOfTenants[1],building.numberOfRoomsAndRent.dan[0])
 // 4. Si (loyer Sarah + loyer David) > loyer Dan  →  loyer Dan = 1200
 // ...
-
+if(building.numberOfRoomsAndRent.sarah[1]+building.numberOfRoomsAndRent.david[1]>building.numberOfRoomsAndRent.dan[1])
+  building.numberOfRoomsAndRent.dan[1] = 1200
+console.log(building.numberOfRoomsAndRent.dan[1]) // 1200
 
 // ============================================================
 //  🌟 EXERCICE 5 : Family
 // ============================================================
 // 1. Créer un objet `family` avec quelques paires clé/valeur
-// ...
+const family = {
+  father: "David",
+  mother: "Sarah",
+  brother: "Yonathan",
+  sister: "Noa",
+};
 
 // 2. Boucle `for...in` → afficher les CLÉS
-// ...
+for (let key in family) {
+  console.log(key);
+}
 
 // 3. Boucle `for...in` → afficher les VALEURS
-// ...
+for (let key in family) {
+  console.log(family[key]);
+}
 
 
 // ============================================================
@@ -120,7 +173,11 @@ const details = {
 };
 
 // Avec une boucle `for`, afficher : "my name is Rudolf the reindeer"
-// ...
+let sentence = "";
+for (let key in details) {
+  sentence += key + " " + details[key] + " ";
+}
+console.log(sentence.trim()); // my name is Rudolf the reindeer
 
 
 // ============================================================
@@ -132,4 +189,9 @@ const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
 // triées par ordre alphabétique.
 // (indice : une string est un tableau de lettres)
 // Résultat attendu : "ABJKPS"
-// ...
+let letters = [];
+for (let i = 0; i < names.length; i++) {
+  letters.push(names[i][0]);
+}
+letters.sort();
+console.log(letters.join("")); // ABJKPS
