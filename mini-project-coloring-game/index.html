@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloring Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="btn">Effacer</button>    
+    <!-- 1. La palette de couleurs -->
+     
+
+    <!-- 2. La grille de cases blanches -->
+     <div class="palette"></div>
+    <div class = "grille"></div>
+    <script>
+const myButton = document.querySelector('.btn')
+const colors = [
+    "red", "orange", "yellow", "lime",
+    "green", "cyan", "blue", "navy",
+    "purple", "magenta", "pink", "brown",
+    "gray", "black", "beige", "white"
+];
+let Onclickcolor = 'black';
+
+let Isdrawing = false;
+
+myButton.addEventListener('click',()=>{
+    const Allcells = document.querySelectorAll('.square')
+    for (let i = 0; i < Allcells.length; i++) {
+        Allcells[i].style.backgroundColor = 'white';
+    }
+
+})
+
+
+const numberOfSquares = 1200;
+let grilles = document.querySelector('.grille')
+for(let i = 0; i<1200;i++){
+let createGrilles = document.createElement('div')
+createGrilles.classList.add('square')
+grilles.appendChild(createGrilles)
+createGrilles.addEventListener('mouseover', () => {
+    if (Isdrawing === true) {
+        createGrilles.style.backgroundColor = Onclickcolor;
+    }
+});
+}
+let palette = document.querySelector('.palette')
+for(let i = 0; i<colors.length;i++){
+let createGrilles = document.createElement('div')
+createGrilles.classList.add('color')
+createGrilles.addEventListener('click',()=>{
+Onclickcolor = colors[i]
+createGrilles.addEventListener('mousedown',()=>createGrilles.style.backgroundColor = Onclickcolor);
+})
+palette.appendChild(createGrilles);
+createGrilles.style.backgroundColor = colors[i];
+}
+grilles.addEventListener('mousedown',()=>Isdrawing = true);
+document.addEventListener('mouseup',()=>Isdrawing = false);
+
+
+
+    </script>
+</body>
+</html>

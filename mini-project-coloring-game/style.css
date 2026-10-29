@@ -1,0 +1,49 @@
+/* Coloring Game : le style */
+/* Indice : display: grid pour la palette et pour la grille */
+.square{
+
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+
+
+}
+.grille{
+
+    display: grid;
+    grid-template-columns: repeat(40,20px);
+}
+body {
+    gap: 30px;
+    min-height: 100vh;
+    display: flex;              
+    justify-content: center;    
+    align-items: center;      }
+
+.color{
+
+    width: 40px;
+    height: 40px;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+
+
+}
+.palette{
+
+    display: grid;
+    grid-template-columns: repeat(2,40px);
+}
+.btn{
+    background-color: steelblue;  /* couleur de fond */
+    color: white;                 /* couleur du texte */
+    padding: 10px 20px;           /* espace intérieur : haut/bas, gauche/droite */
+    border: none;                 /* enlève la bordure par défaut */
+    border-radius: 8px;           /* coins arrondis */
+    font-size: 16px;              /* taille du texte */
+    cursor: pointer;              /* la petite main au survol */
+}
+
+
