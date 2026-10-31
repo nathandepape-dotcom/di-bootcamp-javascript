@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3 : Transform the sentence</title>
+</head>
+<body>
+    <p><strong>Hello</strong> I hope you are enjoying <strong>this</strong> class. At the
+    <strong>end</strong> you <strong>will</strong> be great Developers!
+    <strong>Enjoy</strong> the <strong>JavaScript </strong> lessons</p>
+    <script>
+        let allBoldItems
+        function getBoldItems(){
+            allBoldItems = document.querySelectorAll('p strong')
+            
+
+
+
+        }
+        getBoldItems()
+        function highlight() {
+    for (let i = 0; i < allBoldItems.length; i++) {
+        allBoldItems[i].style.color = 'blue';
+    }
+}
+
+function returnItemsToDefault() {
+    for (let i = 0; i < allBoldItems.length; i++) {
+        allBoldItems[i].style.color = 'black';
+    }
+}
+let allPItems = document.querySelector('p')
+allPItems.onmouseover = highlight;
+allPItems.onmouseout = returnItemsToDefault;
+    </script>
+</body>
+</html>
