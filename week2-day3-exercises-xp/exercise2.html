@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 : Work with forms</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="firstname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lastname"><br><br>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+    <ul class="usersAnswer"></ul>
+    <script>
+        let recup = document.querySelector('form')
+        console.log(recup)
+        let recupById = document.querySelector('#fname')
+        let recupByIds = document.querySelector('#lname')
+        console.log(recupById,recupByIds)
+        let lastNameByName = document.querySelector('input[name="lastname"]');
+        let firstNameByName = document.querySelector('input[name="firstname"]');
+        console.log(firstNameByName, lastNameByName)
+        let userList = document.querySelector('.usersAnswer')
+        recup.addEventListener('submit',(e)=>{
+            e.preventDefault(); // empêche le formulaire de recharger la page, ce qui effacerait tout ce que le code a fait
+            let firstName = firstNameByName.value
+            let lastName = lastNameByName.value
+            
+            if( firstName !== "" && lastName !== ""){
+                console.log(firstName,lastName)
+                let firstNameLi = document.createElement("li");   // 1. créer un <li> (en mémoire)
+                firstNameLi.textContent = firstName;               // 2. y mettre le texte
+                userList.appendChild(firstNameLi);                 // 3. l'accrocher dans le <ul>
+                let lastNameLi = document.createElement('li');
+                lastNameLi.textContent = lastName;
+                userList.appendChild(lastNameLi);
+            }
+        })
+    </script>
+</body>
+</html>
