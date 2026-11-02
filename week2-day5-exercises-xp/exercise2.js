@@ -1,0 +1,5 @@
+// 🌟 Exercise 2 : Ternary operator
+const winBattle = () => true;
+
+const experiencePoints = winBattle() ? 10 : 1;
+console.log(experiencePoints); // 10
