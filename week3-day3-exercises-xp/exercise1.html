@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 1 : HTML Form (GET)</title>
+</head>
+<body>
+  <!--
+  🌟 Exercise 1 : HTML Form
+  Create a form with three inputs:
+    - a small text input asking for a name,
+    - a larger textarea input to write a message,
+    - a submit input ("Send")
+  When you click Send, the form is submitted with a GET method
+  (you can use this same HTML file as the action url).
+  Question: where will the sent data appear?
+  My answer: with GET, the data appears in the URL, after a "?" as a query string:
+  exercise1.html?name=Nathan&message=Hello+world
+  (key=value pairs separated by &, spaces encoded as +).
+  -->
+
+  <form action="exercise1.html" method="get">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="message">Message</label><br>
+    <textarea id="message" name="message" rows="6" cols="40"></textarea><br><br>
+    <input type="submit" value="Send">
+  </form>
+
+</body>
+</html>

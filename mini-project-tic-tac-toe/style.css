@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #1e1e2f;
+  color: #fff;
+  padding: 20px;
+}
+
+.controls p { margin: 10px 0 5px; }
+
+button, select {
+  font-size: 1rem;
+  padding: 8px 16px;
+  margin: 4px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.symbol-btn.selected { background: #0ccac4; }
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 6px;
+  justify-content: center;
+  margin: 25px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #2f2f4f;
+  border-radius: 8px;
+  font-size: 3rem;
+  line-height: 100px;
+  cursor: pointer;
+}
+
+.cell.win { background: #11998e; }
+
+#message { font-size: 1.4rem; min-height: 1.6em; }

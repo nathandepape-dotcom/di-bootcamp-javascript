@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Random Quote Generator</h1>
+
+  <!-- Part 1 -->
+  <section id="quoteSection">
+    <p id="quoteText">Click the button to get a quote</p>
+    <p id="quoteAuthor"></p>
+    <p id="quoteInfo"></p>
+  </section>
+  <button id="generateBtn">Generate Quote</button>
+
+  <!-- Part 2 : buttons under the quote -->
+  <div class="tools">
+    <button id="charsWithSpaces">Characters (with spaces)</button>
+    <button id="charsWithoutSpaces">Characters (without spaces)</button>
+    <button id="wordsCount">Words</button>
+    <button id="likeBtn">👍 Like</button>
+  </div>
+
+  <!-- Part 2 : add a quote -->
+  <form id="addForm">
+    <h2>Add a quote</h2>
+    <input type="text" id="newQuote" placeholder="Quote" required>
+    <input type="text" id="newAuthor" placeholder="Author" required>
+    <button type="submit">Add quote</button>
+  </form>
+
+  <!-- Part 3 : filter by author -->
+  <form id="filterForm">
+    <h2>Filter by author</h2>
+    <input type="text" id="authorSearch" placeholder="Author name">
+    <button type="submit">Filter</button>
+  </form>
+  <div class="tools">
+    <button id="prevBtn" disabled>Previous</button>
+    <button id="nextBtn" disabled>Next</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

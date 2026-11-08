@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 2 : HTML Form #2 (POST)</title>
+</head>
+<body>
+  <!--
+  🌟 Exercise 2 : HTML Form #2
+  Same form structure as Exercise 1, but submitted with a POST method
+  (you can use this same HTML file as the action url).
+  Question: where will the sent data appear? Hint: look at the Network tab.
+  My answer: with POST, the data does NOT appear in the URL.
+  It is sent in the body of the HTTP request: DevTools > Network tab > click the request >
+  Payload (or Request) tab -> Form Data: name=Nathan, message=Hello world.
+  (Opened as a local file, the browser may refuse POST on file://; use Live Server to see it.)
+  -->
+
+  <form action="exercise2.html" method="post">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="message">Message</label><br>
+    <textarea id="message" name="message" rows="6" cols="40"></textarea><br><br>
+    <input type="submit" value="Send">
+  </form>
+
+</body>
+</html>
